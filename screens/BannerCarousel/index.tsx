@@ -1,5 +1,10 @@
 import React, { MutableRefObject, useRef, useContext, useState } from 'react';
-import { KeyboardAvoidingView, TextInput, View } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  ScrollView,
+  TextInput,
+  View,
+} from 'react-native';
 import Swiper from 'react-native-swiper';
 import { gradientBackground, prevButtonName, nextButtonName } from './utils';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -61,10 +66,13 @@ const BannerCarousel = () => {
   };
 
   return (
-    <>
-      {welcomeModal({ modalVisibility, onClosemodal })}
-      <LinearGradient colors={gradientBackground} style={styles.linearGradient}>
-        <KeyboardAvoidingView style={{ flex: 1 }}>
+    <ScrollView scrollEnabled={false}>
+      <KeyboardAvoidingView>
+        {welcomeModal({ modalVisibility, onClosemodal })}
+        <LinearGradient
+          colors={gradientBackground}
+          style={styles.linearGradient}
+        >
           <View style={styles.bannerCarouselContainer}>
             {/* 
         // @ts-ignore react-native-types version most likely*/}
@@ -87,9 +95,9 @@ const BannerCarousel = () => {
               {BannerCarouselScreens({ slideCarousel, slideCarouselToStart })}
             </Swiper>
           </View>
-        </KeyboardAvoidingView>
-      </LinearGradient>
-    </>
+        </LinearGradient>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
