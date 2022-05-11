@@ -1,9 +1,10 @@
-import React, { MutableRefObject, useRef, useContext, useEffect } from 'react';
+import React, { MutableRefObject, useRef, useContext, useState } from 'react';
 import { KeyboardAvoidingView, TextInput, View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { gradientBackground, prevButtonName, nextButtonName } from './utils';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SentenceContext } from '../../context/SentenceContext';
+import welcomeModal from './components/welcomeModal/index';
 import bannerCarouselSkipButton from '../BannerCarousel/components/bannerCarouselSkipButtons';
 import BannerCarouselScreens from '../BannerCarouselScreens';
 import { bannerCarouselStyles } from './styles';
@@ -18,6 +19,7 @@ const BannerCarousel = () => {
     setWhenSentence,
     setWhereSentence,
   } = useContext(SentenceContext);
+  const [modalVisibility, setModalVisibility] = useState(true);
 
   const focusInput = (
     inputRef?: MutableRefObject<TextInput | null> | undefined | null
@@ -49,35 +51,45 @@ const BannerCarousel = () => {
     }
   };
 
-  useEffect(() => {
+  const onClosemodal = () => {
+    setModalVisibility(false);
     if (whoInputRef) {
-      whoInputRef.current?.focus();
+      setTimeout(() => {
+        whoInputRef.current?.focus();
+      }, 300);
     }
-  }, []);
+  };
 
   return (
-    <LinearGradient colors={gradientBackground} style={styles.linearGradient}>
-      <KeyboardAvoidingView style={{ flex: 1 }}>
-        <View style={styles.bannerCarouselContainer}>
-          {/* 
+    <>
+      {welcomeModal({ modalVisibility, onClosemodal })}
+      <LinearGradient colors={gradientBackground} style={styles.linearGradient}>
+        <KeyboardAvoidingView style={{ flex: 1 }}>
+          <View style={styles.bannerCarouselContainer}>
+            {/* 
         // @ts-ignore react-native-types version most likely*/}
-          <Swiper
-            ref={carouselRef}
-            nextButton={bannerCarouselSkipButton({ iconName: nextButtonName })}
-            prevButton={bannerCarouselSkipButton({ iconName: prevButtonName })}
-            activeDotColor={'black'}
-            activeDotStyle={styles.carouselActiveDotStyle}
-            loop={false}
-            horizontal
-            showsButtons
-            style={styles.carouselStyle}
-            paginationStyle={styles.carouselPaginationStyle}
-          >
-            {BannerCarouselScreens({ slideCarousel, slideCarouselToStart })}
-          </Swiper>
-        </View>
-      </KeyboardAvoidingView>
-    </LinearGradient>
+            <Swiper
+              ref={carouselRef}
+              nextButton={bannerCarouselSkipButton({
+                iconName: nextButtonName,
+              })}
+              prevButton={bannerCarouselSkipButton({
+                iconName: prevButtonName,
+              })}
+              activeDotColor={'black'}
+              activeDotStyle={styles.carouselActiveDotStyle}
+              loop={false}
+              horizontal
+              showsButtons
+              style={styles.carouselStyle}
+              paginationStyle={styles.carouselPaginationStyle}
+            >
+              {BannerCarouselScreens({ slideCarousel, slideCarouselToStart })}
+            </Swiper>
+          </View>
+        </KeyboardAvoidingView>
+      </LinearGradient>
+    </>
   );
 };
 
