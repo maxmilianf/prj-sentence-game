@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { FullSentenceScreenStylesProps } from '../types';
+import { FullSentenceScreenStyles } from '../types';
 
 export const fullSentenceScreenStyles =
-  StyleSheet.create<FullSentenceScreenStylesProps>({
+  StyleSheet.create<FullSentenceScreenStyles>({
     container: {
       flex: 1,
       alignItems: 'center',

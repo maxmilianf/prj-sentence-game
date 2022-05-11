@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { BannerCarouselSkipButtonStylesProps } from '../types';
+import { BannerCarouselSkipButtonStyles } from '../types';
 
 export const bannerCarouselSkipButtonStyles =
-  StyleSheet.create<BannerCarouselSkipButtonStylesProps>({
+  StyleSheet.create<BannerCarouselSkipButtonStyles>({
     skipButtonStyle: {
       opacity: 0.8,
     },

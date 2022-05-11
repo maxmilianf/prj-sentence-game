@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-export type FullSentenceScreenStylesProps = {
+export type FullSentenceScreenStyles = {
   container: ViewStyle;
   sentence: TextStyle;
   takeBackButton: ViewStyle;

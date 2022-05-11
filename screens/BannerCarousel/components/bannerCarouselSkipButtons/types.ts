@@ -4,6 +4,6 @@ export interface BannerCarouselSkipButtonsProps {
   iconName: string;
 }
 
-export type BannerCarouselSkipButtonStylesProps = {
+export type BannerCarouselSkipButtonStyles = {
   skipButtonStyle: ViewStyle;
 };

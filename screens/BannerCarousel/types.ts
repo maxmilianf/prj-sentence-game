@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-export type BannerCarouselStylesProps = {
+export type BannerCarouselStyles = {
   linearGradient: ViewStyle;
   bannerCarouselContainer: ViewStyle;
   carouselActiveDotStyle: ViewStyle;
