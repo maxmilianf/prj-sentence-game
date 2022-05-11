@@ -1,16 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { SentenceContext } from '../../../../context/SentenceContext';
 import BannerCarouselItem from '../../../BannerCarousel/components/bannerCarouselItem';
 import { ScreenTypes } from '../types';
 
-const WhereScreen = ({ slideCarousel = () => {} }: ScreenTypes) => {
-  const { whereSentence, setWhereSentence, fullSentence, whereInputRef } =
+const WhereScreen = ({ slideCarousel = () => {}, screenName }: ScreenTypes) => {
+  const { whereSentence, setWhereSentence, whereInputRef } =
     useContext(SentenceContext);
-  const screenName = 'Where?';
-
-  useEffect(() => {
-    console.log('FULL SENTENCE: ', fullSentence);
-  }, [fullSentence]);
 
   return (
     <BannerCarouselItem

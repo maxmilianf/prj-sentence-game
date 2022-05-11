@@ -66,8 +66,6 @@ export const SentenceContextProvider = ({
   const displaySentence =
     whoSentence && whatSentence && whenSentence && whereSentence !== '';
 
-  console.log('DISPLAY?', displaySentence);
-
   const providerValues = {
     whoSentence,
     whatSentence,

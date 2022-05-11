@@ -3,10 +3,9 @@ import { SentenceContext } from '../../../../context/SentenceContext';
 import BannerCarouselItem from '../../../BannerCarousel/components/bannerCarouselItem';
 import { ScreenTypes } from '../types';
 
-const WhenScreen = ({ slideCarousel = () => {} }: ScreenTypes) => {
+const WhenScreen = ({ slideCarousel = () => {}, screenName }: ScreenTypes) => {
   const { whenSentence, setWhenSentence, whenInputRef, whereInputRef } =
     useContext(SentenceContext);
-  const screenName = 'When?';
 
   return (
     <BannerCarouselItem

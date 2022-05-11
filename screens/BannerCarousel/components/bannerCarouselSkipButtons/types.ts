@@ -1,7 +1,7 @@
 import { ViewStyle } from 'react-native';
 
 export interface BannerCarouselSkipButtonsProps {
-  icon: string;
+  iconName: string;
 }
 
 export type BannerCarouselSkipButtonStylesProps = {

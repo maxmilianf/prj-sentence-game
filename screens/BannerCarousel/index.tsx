@@ -63,8 +63,8 @@ const BannerCarousel = () => {
         // @ts-ignore react-native-types version most likely*/}
           <Swiper
             ref={carouselRef}
-            nextButton={bannerCarouselSkipButton(nextButtonName)}
-            prevButton={bannerCarouselSkipButton(prevButtonName)}
+            nextButton={bannerCarouselSkipButton({ iconName: nextButtonName })}
+            prevButton={bannerCarouselSkipButton({ iconName: prevButtonName })}
             activeDotColor={'black'}
             activeDotStyle={styles.carouselActiveDotStyle}
             loop={false}

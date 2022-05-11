@@ -4,7 +4,7 @@ import { bannerCarouselSkipButtonStyles } from './styles';
 import { BannerCarouselSkipButtonsProps } from './types';
 
 const bannerCarouselSkipButton = ({
-  icon = '',
+  iconName = '',
 }: BannerCarouselSkipButtonsProps) => {
   const styles = bannerCarouselSkipButtonStyles;
   return (
@@ -12,7 +12,7 @@ const bannerCarouselSkipButton = ({
       {/* 
         // @ts-ignore react-native-types or react-native-paper most likely*/}
       <IconButton
-        icon={icon}
+        icon={iconName}
         size={30}
         color='black'
         style={styles.skipButtonStyle}

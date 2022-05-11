@@ -2,6 +2,7 @@ import React from 'react';
 import WhoScreen from './screens/WhoScreen';
 import WhatScreen from './screens/WhatScreen';
 import WhenScreen from './screens/WhenScreen';
+import { screenNames } from '../BannerCarousel/utils';
 import WhereScreen from './screens/WhereScreen';
 import FullSentenceScreen from './screens/FullSentenceScreen';
 
@@ -15,11 +16,27 @@ const BannerCarouselScreens = ({
   slideCarouselToStart = () => {},
 }: bannerCarouselScreenProps) => {
   return [
-    <WhoScreen slideCarousel={slideCarousel} />,
-    <WhatScreen slideCarousel={slideCarousel} />,
-    <WhenScreen slideCarousel={slideCarousel} />,
-    <WhereScreen slideCarousel={slideCarousel} />,
-    <FullSentenceScreen slideCarouselToStart={slideCarouselToStart} />,
+    <WhoScreen
+      slideCarousel={slideCarousel}
+      key={screenNames.who}
+      screenName={screenNames.who}
+    />,
+    <WhatScreen
+      slideCarousel={slideCarousel}
+      key={screenNames.what}
+      screenName={screenNames.what}
+    />,
+    <WhenScreen
+      slideCarousel={slideCarousel}
+      key={screenNames.when}
+      screenName={screenNames.when}
+    />,
+    <WhereScreen
+      slideCarousel={slideCarousel}
+      key={screenNames.when}
+      screenName={screenNames.where}
+    />,
+    <FullSentenceScreen slideCarouselToStart={slideCarouselToStart} key={5} />,
   ];
 };
 

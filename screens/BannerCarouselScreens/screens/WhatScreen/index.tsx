@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { SentenceContext } from '../../../../context/SentenceContext';
 import BannerCarouselItem from '../../../BannerCarousel/components/bannerCarouselItem';
 import { ScreenTypes } from '../types';
 
-const WhatScreen = ({ slideCarousel = () => {} }: ScreenTypes) => {
+const WhatScreen = ({ slideCarousel = () => {}, screenName }: ScreenTypes) => {
   const { whatSentence, setWhatSentence, whatInputRef, whenInputRef } =
     useContext(SentenceContext);
-  const screenName = 'What?';
 
   return (
     <BannerCarouselItem
