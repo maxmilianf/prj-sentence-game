@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 import WhoScreen from './screens/WhoScreen';
 import WhatScreen from './screens/WhatScreen';
 import WhenScreen from './screens/WhenScreen';
 import { screenNames } from '../BannerCarousel/utils';
 import WhereScreen from './screens/WhereScreen';
 import FullSentenceScreen from './screens/FullSentenceScreen';
+import { TextInput } from 'react-native';
 
 interface bannerCarouselScreenProps {
-  slideCarousel: () => void;
+  slideCarousel: (
+    inputRef: MutableRefObject<TextInput | null> | null | undefined
+  ) => void;
   slideCarouselToStart: () => void;
 }
 

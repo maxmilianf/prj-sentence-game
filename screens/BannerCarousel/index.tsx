@@ -27,21 +27,22 @@ const BannerCarousel = () => {
   const [modalVisibility, setModalVisibility] = useState(true);
 
   const focusInput = (
-    inputRef?: MutableRefObject<TextInput | null> | undefined | null
+    timeOut: number,
+    inputRef: MutableRefObject<TextInput | null> | null | undefined
   ) => {
     if (inputRef) {
       setTimeout(() => {
         inputRef.current?.focus();
-      }, 600);
+      }, timeOut);
     }
   };
 
   const slideCarousel = (
-    inputRef?: MutableRefObject<TextInput> | undefined
+    inputRef: MutableRefObject<TextInput | null> | null | undefined
   ) => {
     if (carouselRef) {
       carouselRef.current?.scrollBy(1, true);
-      focusInput(inputRef);
+      focusInput(600, inputRef);
     }
   };
 
@@ -52,7 +53,7 @@ const BannerCarousel = () => {
       setWhenSentence('');
       setWhereSentence('');
       carouselRef.current?.scrollTo(0, true);
-      focusInput(whoInputRef);
+      focusInput(800, whoInputRef);
     }
   };
 
