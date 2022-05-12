@@ -6,7 +6,12 @@ import {
   View,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { gradientBackground, prevButtonName, nextButtonName } from './utils';
+import {
+  gradientBackground,
+  prevButtonName,
+  nextButtonName,
+  activeDotColor,
+} from './utils';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SentenceContext } from '../../context/SentenceContext';
 import welcomeModal from './components/welcomeModal/index';
@@ -85,7 +90,7 @@ const BannerCarousel = () => {
               prevButton={bannerCarouselSkipButton({
                 iconName: prevButtonName,
               })}
-              activeDotColor={'black'}
+              activeDotColor={activeDotColor}
               activeDotStyle={styles.carouselActiveDotStyle}
               loop={false}
               horizontal
